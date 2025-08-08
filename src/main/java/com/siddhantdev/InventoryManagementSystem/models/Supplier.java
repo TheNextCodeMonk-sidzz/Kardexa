@@ -7,16 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="categories")
+@Table(name="suppliers")
 @Data
 @Builder
-
-public class Category {
+public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,15 +21,10 @@ public class Category {
     @NotBlank(message = "Name is required")
     private String name;
 
-    //one category can have one to many products
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL) // check what cascade does for better understandingSu
-    private List<Product> proucts;
+    @NotBlank(message = "contactInfo is required")
+    private String contactInfo;
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+    private String address;
+
+
 }
