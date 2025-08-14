@@ -2,7 +2,6 @@ package com.siddhantdev.InventoryManagementSystem.models;
 
 import com.siddhantdev.InventoryManagementSystem.enums.UserRole;
 import jakarta.persistence.*;
-import jakarta.transaction.Transaction;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,7 +41,7 @@ public class User {
     private UserRole role;
 
     @OneToMany(mappedBy = "user")
-    private List<Transaction> transactions;
+    private List<Transaction> transactions ;
 
     @Column(name = "created_at")
     private final LocalDateTime createdAt=LocalDateTime.now();

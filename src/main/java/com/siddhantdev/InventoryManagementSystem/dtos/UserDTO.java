@@ -1,8 +1,8 @@
 package com.siddhantdev.InventoryManagementSystem.dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.siddhantdev.InventoryManagementSystem.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,8 +26,8 @@ public class UserDTO {
 
     private String email;
 
-    /// dont convert the password to josn
-    @JsonIgnore
+    /// dont convert the password to jos
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 
