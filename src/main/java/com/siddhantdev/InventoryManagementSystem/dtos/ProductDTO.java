@@ -44,7 +44,4 @@ public class ProductDTO {
     private LocalDateTime createdAt;
 
 
-    //many products can be in same category. thats why we use Manytoone rel.
-    private CategoryDTO category;
-
 }

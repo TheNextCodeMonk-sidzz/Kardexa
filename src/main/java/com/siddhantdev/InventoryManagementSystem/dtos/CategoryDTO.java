@@ -24,6 +24,6 @@ public class CategoryDTO {
     @NotBlank(message = "Name is required")
     private String name;
 
-    private List<ProductDTO> proucts;
+    private List<ProductDTO> products;
 
 }
