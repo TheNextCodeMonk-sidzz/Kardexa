@@ -2,6 +2,7 @@ package com.siddhantdev.InventoryManagementSystem.Controllers;
 
 import com.siddhantdev.InventoryManagementSystem.dtos.Response;
 import com.siddhantdev.InventoryManagementSystem.dtos.UserDTO;
+import com.siddhantdev.InventoryManagementSystem.models.User;
 import com.siddhantdev.InventoryManagementSystem.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -46,6 +47,10 @@ public class UserController {
 
     //done
 
+    @GetMapping("/current")
+    public ResponseEntity<User> getCurrentUser(){
+        return ResponseEntity.ok(userService.getCurrentLoggedInUser());
+    }
 
 
 }

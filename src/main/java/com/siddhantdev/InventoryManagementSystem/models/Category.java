@@ -26,7 +26,7 @@ public class Category {
 
     //one category can have one to many products
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL) // check what cascade does for better understandingSu
-    private List<Product> proucts;
+    private List<Product> products;
 
     @Override
     public String toString() {
