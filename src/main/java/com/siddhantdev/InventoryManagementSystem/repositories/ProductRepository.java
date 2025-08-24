@@ -13,3 +13,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     // this is how jpa works
 
 }
+
+
