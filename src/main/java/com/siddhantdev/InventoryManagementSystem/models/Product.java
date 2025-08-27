@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Table(name="Products")
 @Data
 @Builder
-
+// Entity model classes using annotations
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -33,7 +33,10 @@ public class ProductServiceImpl implements ProductService {
 
     private final CategoryRepository categoryRepository;
 
-    private static final String IMAGE_DIRECTORY= System.getProperty("user.dir")+"/product-images";
+//    private static final String IMAGE_DIRECTORY= System.getProperty("user.dir")+"/product-images";
+
+    // temp image directory till i finish front end setup is done
+    private static final String IMAGE_DIRECTORY_2= "C:/Users/Admin/Desktop/All Coding Stuff/Spring-Boot_Journey/Udemy_project/Dennis/FrontEnd_IMS/Kardexa_FrontEnd/InventoryManagementSystem/public/products/";
 
 
     @Override
@@ -194,7 +197,7 @@ public class ProductServiceImpl implements ProductService {
 
         //create directory if not exist
 
-        File directory = new File(IMAGE_DIRECTORY);
+        File directory = new File(IMAGE_DIRECTORY_2);
         if(!directory.exists()){
             directory.mkdir();
             log.info(" Directory was created");
@@ -204,7 +207,7 @@ public class ProductServiceImpl implements ProductService {
         String uniqueFileName= UUID.randomUUID()+"_"+ imageFile.getOriginalFilename();
 
         //get absolute path of image
-        String imagePath= IMAGE_DIRECTORY+ File.separator + uniqueFileName;
+        String imagePath= IMAGE_DIRECTORY_2+ File.separator + uniqueFileName;
         try{
             File destinationFile= new File(imagePath);
             imageFile.transferTo(destinationFile); // we are writing image to this folder
@@ -213,7 +216,8 @@ public class ProductServiceImpl implements ProductService {
             throw new IllegalArgumentException("Error Saving image:  "+ e.getMessage());
 
         }
-        return imagePath;
+//        return imagePath; use this when your frontend is done and production ready
+        return "products/"+uniqueFileName;
 
     }
 

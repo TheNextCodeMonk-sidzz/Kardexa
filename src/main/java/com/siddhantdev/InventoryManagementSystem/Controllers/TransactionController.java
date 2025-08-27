@@ -36,8 +36,8 @@ public class TransactionController {
     public ResponseEntity<Response> getAllTransactions(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "1000") int size,
-            @RequestParam(required = false) String searchValue) {
-        return ResponseEntity.ok(transactionService.getAllTransactions(page, size, searchValue));
+            @RequestParam(required = false) String filter) {
+        return ResponseEntity.ok(transactionService.getAllTransactions(page, size, filter));
     }
 
     @GetMapping("/{id}")
